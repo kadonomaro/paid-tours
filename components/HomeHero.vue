@@ -87,6 +87,10 @@
         color: #fff;
         background-color: $color-accent;
         border-radius: 25px;
+        transition: background-color 0.2s ease-in;
+        &:hover {
+            background-color: $color-base;
+        }
         span {
             position: relative;
         }

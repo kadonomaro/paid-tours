@@ -16,6 +16,5 @@
 
 <style lang="scss">
     .the-header {
-        display: contents;
     }
 </style>

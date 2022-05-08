@@ -21,7 +21,7 @@
         transition: background-color 0.2s ease-in, color 0.2s ease-in;
         &:hover {
             background-color: #fff;
-            color: $color-accent;
+            color: $color-base;
         }
         @include bp($bp-desktop-sm) {
             font-size: 16px;
