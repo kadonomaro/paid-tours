@@ -19,6 +19,7 @@
 
 <style lang="scss">
     .the-footer {
-        border-top: 1px solid $color-border;
+        color: #fff;
+        background-color: $color-base;
     }
 </style>

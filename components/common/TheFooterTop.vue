@@ -3,10 +3,16 @@
     import TheFooterNavigation from "~/components/common/TheFooterNavigation";
     import TheCallbackButton from "~/components/common/TheCallbackButton";
     import TheSocialLinks from "~/components/common/TheSocialLinks";
+    import TheLogo from "~/components/common/TheLogo";
 
     export default {
         name: "TheFooterTop",
-        components: { TheSocialLinks, TheCallbackButton, TheFooterNavigation },
+        components: {
+            TheLogo,
+            TheSocialLinks,
+            TheCallbackButton,
+            TheFooterNavigation,
+        },
         menu() {
             return menu;
         },
@@ -15,24 +21,26 @@
 
 <template>
     <div class="the-footer-top">
-        <div class="the-footer-top__main">
-            <div
-                v-for="(menu, i) in $options.menu()"
-                :key="i"
-                class="the-footer-top__col"
-            >
-                <the-footer-navigation :menu="menu"></the-footer-navigation>
-            </div>
+        <div class="the-footer-top__logo">
+            <the-logo></the-logo>
         </div>
-        <div class="the-footer-top__side">
-            <div class="the-footer-top__title">Наши контакты</div>
+
+        <div class="the-footer-top__navigation">
+            <the-footer-navigation
+                :menu="$options.menu()"
+            ></the-footer-navigation>
+        </div>
+        <div class="the-footer-top__contacts">
             <div class="the-footer-top__social">
+                <div class="the-footer-top__title">Наши контакты</div>
                 <the-social-links></the-social-links>
             </div>
-            <div class="the-footer-top__title">График работы</div>
-            <div class="the-footer-top__work">Пн-Вс с 8:00 до 20:00</div>
-            <div class="the-footer-top__callback">
-                <the-callback-button></the-callback-button>
+            <div class="the-footer-top__time">
+                <div class="the-footer-top__title">График работы</div>
+                <div class="the-footer-top__work">Пн-Вс с 8:00 до 20:00</div>
+                <div class="the-footer-top__callback">
+                    <the-callback-button></the-callback-button>
+                </div>
             </div>
         </div>
     </div>
@@ -47,40 +55,31 @@
         }
     }
 
-    .the-footer-top__main {
-        @include bp($bp-desktop-sm) {
-            display: flex;
-            flex-basis: 75%;
-            flex-grow: 1;
-        }
-    }
-
-    .the-footer-top__side {
-        @include bp($bp-desktop-sm) {
-            flex-basis: 25%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-    }
-
-    .the-footer-top__callback {
-        margin-left: auto;
-    }
-
-    .the-footer-top__col {
+    .the-footer-top__logo {
         margin-bottom: 24px;
         @include bp($bp-desktop-sm) {
-            flex-basis: calc(100% / 3);
-            max-width: calc(100% / 3);
+            margin-right: 60px;
             margin-bottom: 0;
+        }
+    }
+
+    .the-footer-top__navigation {
+        margin-bottom: 24px;
+        @include bp($bp-desktop-sm) {
+            margin-right: auto;
+            margin-bottom: 0;
+        }
+    }
+
+    .the-footer-top__contacts {
+        @include bp($bp-desktop-sm) {
+            display: flex;
         }
     }
 
     .the-footer-top__title {
         margin-bottom: 8px;
         font-size: 16px;
-        font-weight: 500;
         @include bp($bp-desktop-sm) {
             margin-bottom: 12px;
         }
@@ -88,11 +87,17 @@
 
     .the-footer-top__social {
         margin-bottom: 24px;
+        @include bp($bp-desktop-sm) {
+            margin-right: 60px;
+            margin-bottom: 0;
+        }
     }
 
     .the-footer-top__work {
         margin-bottom: 24px;
-        color: $color-light;
         font-size: 14px;
+        @include bp($bp-desktop-sm) {
+            margin-bottom: 0;
+        }
     }
 </style>

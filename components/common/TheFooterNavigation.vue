@@ -3,8 +3,8 @@
         name: "TheFooterNavigation",
         props: {
             menu: {
-                type: Object,
-                default: () => {},
+                type: Array,
+                default: () => [],
             },
         },
     };
@@ -12,15 +12,9 @@
 
 <template>
     <nav class="the-footer-navigation">
-        <NuxtLink
-            class="the-footer-navigation__title"
-            :to="{ name: menu.link, hash: menu.hash }"
-        >
-            {{ menu.name }}
-        </NuxtLink>
         <ul class="the-footer-navigation__list">
             <li
-                v-for="(item, i) in menu.sub"
+                v-for="(item, i) in menu"
                 :key="i"
                 class="the-footer-navigation__item"
             >
@@ -36,37 +30,32 @@
 </template>
 
 <style lang="scss">
-    .the-footer-navigation__title {
-        display: block;
-        margin-bottom: 8px;
-        color: inherit;
-        font-size: 16px;
-        font-weight: 500;
+    .the-footer-navigation__list {
         @include bp($bp-desktop-sm) {
-            margin-bottom: 12px;
-        }
-    }
-
-    .the-footer-navigation__title,
-    .the-footer-navigation__link {
-        text-decoration: none;
-        transition: color 0.2s ease-in;
-        &:hover {
-            color: $color-accent;
-        }
-        &.nuxt-link-exact-active {
-            color: $color-accent;
+            display: flex;
+            margin: 0 -8px;
         }
     }
 
     .the-footer-navigation__item {
-        font-size: 14px;
-        &:not(:last-child) {
-            margin-bottom: 8px;
+        @include bp($bp-desktop-sm) {
+            margin: 0 8px;
         }
     }
 
     .the-footer-navigation__link {
-        color: $color-light;
+        display: block;
+        margin-bottom: 8px;
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+        transition: color 0.2s ease-in;
+        &:hover,
+        &.nuxt-link-exact-active {
+            color: $color-accent;
+        }
+        @include bp($bp-desktop-sm) {
+            margin-bottom: 0;
+        }
     }
 </style>

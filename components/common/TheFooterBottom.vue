@@ -12,7 +12,8 @@
 <template>
     <div class="the-footer-bottom">
         <div class="the-footer-bottom__copy">
-            © 2019—{{ getCurrentYear }} «Barneo.sev». Все права защищены
+            © 2019—{{ getCurrentYear }} «Туры в Горный Алтай». Все права
+            защищены
         </div>
         <div class="the-footer-bottom__developer">
             Разработка сайта - Airsoftware
@@ -23,9 +24,8 @@
 <style lang="scss">
     .the-footer-bottom {
         padding: 16px 0;
-        color: $color-light;
         font-size: 12px;
-        border-top: 1px solid $color-border;
+        border-top: 1px solid #fff;
         @include bp($bp-desktop-sm) {
             display: flex;
             align-items: center;
