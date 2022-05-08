@@ -12,9 +12,8 @@
 
 <template>
     <div class="main-page page">
+        <home-hero></home-hero>
         <div class="container">
-            <h1 class="page-title">Натяжные потолки в Крыму</h1>
-
             <div class="main-page__section"></div>
         </div>
     </div>

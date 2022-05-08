@@ -1,11 +1,23 @@
 const menu = [
     {
-        name: "Натяжные потолки",
+        name: "О путешествии",
         link: "index",
-        sub: [
-            { name: "Виды", link: "index", hash: "#types" },
-            { name: "Галерея", link: "index", hash: "#gallery" },
-        ],
+        hash: "#about",
+    },
+    {
+        name: "Цены",
+        link: "index",
+        hash: "#price",
+    },
+    {
+        name: "Что включено",
+        link: "index",
+        hash: "#about",
+    },
+    {
+        name: "Проживание",
+        link: "index",
+        hash: "#about",
     },
 ];
 

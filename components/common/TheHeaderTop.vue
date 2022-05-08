@@ -1,10 +1,11 @@
 <script>
     import TheLogo from "~/components/common/TheLogo";
     import TheCallbackButton from "~/components/common/TheCallbackButton";
+    import TheTopNavigation from "~/components/common/TheTopNavigation";
 
     export default {
         name: "TheHeaderTop",
-        components: { TheCallbackButton, TheLogo },
+        components: { TheTopNavigation, TheCallbackButton, TheLogo },
     };
 </script>
 
@@ -16,11 +17,15 @@
                     <the-logo></the-logo>
                 </div>
 
-                <a href="tel:79785860623" class="the-header-top__phone">
-                    +7 (978) 586 06-23
-                </a>
-                <div class="the-header-top__callback">
-                    <the-callback-button></the-callback-button>
+                <div class="the-header-top__navigation">
+                    <the-top-navigation></the-top-navigation>
+
+                    <a href="tel:79111111111" class="the-header-top__phone">
+                        +7 (911) 111 11-11
+                    </a>
+                    <div class="the-header-top__callback mobile-hidden">
+                        <the-callback-button></the-callback-button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,32 +66,26 @@
         }
     }
 
+    .the-header-top__navigation {
+        display: flex;
+        align-items: center;
+    }
+
     .the-header-top__phone {
-        position: relative;
+        padding: 8px 16px;
         color: #fff;
         font-size: 14px;
-        font-weight: 500;
         line-height: 20px;
         white-space: nowrap;
         text-decoration: none;
-        &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: -2px;
-            height: 1px;
-            background-color: currentColor;
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
+        transition: background-color 0.2s ease-in;
+        border-radius: 25px;
         &:hover {
-            &::before {
-                opacity: 1;
-            }
+            background-color: rgba(#fff, 0.1);
         }
         @include bp($bp-desktop-sm) {
-            font-size: 18px;
+            font-size: 16px;
+            line-height: 24px;
         }
     }
 
@@ -94,7 +93,7 @@
         display: none;
         @include bp($bp-desktop-sm) {
             display: block;
-            margin-left: 30px;
+            margin-left: 10px;
         }
     }
 </style>

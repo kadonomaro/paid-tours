@@ -120,6 +120,7 @@
         font-weight: 400;
         line-height: 24px;
         border: 2px solid $color-border;
+        border-radius: 12px;
         padding: 16px 24px;
         transition: border-color 0.2s ease-in;
         background-color: #fff;

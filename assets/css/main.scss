@@ -1,8 +1,10 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
     color: $color-base;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+
 }
 
 .no-scroll {
@@ -18,9 +20,8 @@ body {
 .page {
     flex-grow: 1;
     padding: 20px 0 60px;
-    background-color: #f9f9f9;
     @include bp($bp-desktop-sm) {
-        padding: 40px 0 100px;
+        padding: 70px 0 100px;
     }
 }
 

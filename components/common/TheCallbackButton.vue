@@ -1,41 +1,31 @@
 <script>
-    import TheSvgIcon from "~/components/common/TheSvgIcon";
-
     export default {
         name: "TheCallbackButton",
-        components: { TheSvgIcon },
-        props: {
-            isOnlyText: Boolean,
-        },
     };
 </script>
 
 <template>
     <button class="the-callback-button" @click="$popup.show('ModalCallback')">
-        <span v-if="!isOnlyText" class="the-callback-button__icon">
-            <the-svg-icon name="call"></the-svg-icon>
-        </span>
-
-        <span>Перезвоните мне</span>
+        Перезвоните мне
     </button>
 </template>
 
 <style lang="scss">
     .the-callback-button {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: $color-accent;
+        padding: 6px 14px;
+        color: #fff;
         font-size: 14px;
-        font-weight: 500;
         line-height: 20px;
+        border-radius: 25px;
+        border: 2px solid #fff;
+        transition: background-color 0.2s ease-in, color 0.2s ease-in;
         &:hover {
-            .the-callback-button__icon {
-                transform: rotate(15deg);
-            }
+            background-color: #fff;
+            color: $color-accent;
         }
         @include bp($bp-desktop-sm) {
             font-size: 16px;
+            line-height: 24px;
         }
     }
 
