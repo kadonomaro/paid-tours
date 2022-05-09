@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <div class="home-hero">
+    <section class="home-hero">
         <div class="container">
             <div class="home-hero__inner">
                 <div class="home-hero__text">
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <style lang="scss">
@@ -83,16 +83,16 @@
 
     .home-hero__button {
         position: relative;
-        padding: 12px 20px;
+        padding: 12px 24px;
         color: #fff;
         background-color: $color-accent;
         border-radius: 25px;
         transition: background-color 0.2s ease-in;
-        &:hover {
-            background-color: $color-base;
-        }
         span {
             position: relative;
+        }
+        &:hover {
+            background-color: $color-base;
         }
         &::before {
             content: "";

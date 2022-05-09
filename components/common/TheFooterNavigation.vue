@@ -33,13 +33,13 @@
     .the-footer-navigation__list {
         @include bp($bp-desktop-sm) {
             display: flex;
-            margin: 0 -8px;
+            margin: 0 -16px;
         }
     }
 
     .the-footer-navigation__item {
         @include bp($bp-desktop-sm) {
-            margin: 0 8px;
+            margin: 0 16px;
         }
     }
 

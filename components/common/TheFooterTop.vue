@@ -1,7 +1,6 @@
 <script>
     import { menu } from "~/settings";
     import TheFooterNavigation from "~/components/common/TheFooterNavigation";
-    import TheCallbackButton from "~/components/common/TheCallbackButton";
     import TheSocialLinks from "~/components/common/TheSocialLinks";
     import TheLogo from "~/components/common/TheLogo";
 
@@ -10,7 +9,6 @@
         components: {
             TheLogo,
             TheSocialLinks,
-            TheCallbackButton,
             TheFooterNavigation,
         },
         menu() {
@@ -38,9 +36,6 @@
             <div class="the-footer-top__time">
                 <div class="the-footer-top__title">График работы</div>
                 <div class="the-footer-top__work">Пн-Вс с 8:00 до 20:00</div>
-                <div class="the-footer-top__callback">
-                    <the-callback-button></the-callback-button>
-                </div>
             </div>
         </div>
     </div>

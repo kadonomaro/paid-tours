@@ -6,7 +6,7 @@
 
 <template>
     <NuxtLink class="the-logo" :to="{ name: 'index' }">
-        <img src="/images/logo.svg" alt="Натяжные потолки" />
+        <img src="/images/logo.svg" alt="Туры в Горный Алтай" />
     </NuxtLink>
 </template>
 

@@ -13,7 +13,7 @@
 <template>
     <div class="modal-gallery">
         <div class="modal-gallery__image">
-            <img :src="imageUrl" alt="Галерея натяжных потолков" />
+            <img :src="imageUrl" alt="" />
         </div>
     </div>
 </template>

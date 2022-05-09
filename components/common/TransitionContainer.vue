@@ -31,6 +31,6 @@
 
 <style lang="scss" scoped>
     .transition-container {
-        --transition-duration--slide-down: 0.2s;
+        --transition-duration--slide-down: 0.3s;
     }
 </style>

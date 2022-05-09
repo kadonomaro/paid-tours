@@ -31,16 +31,16 @@
 </script>
 
 <template>
-    <div ref="jsAccordion" class="b-accordion">
-        <button class="b-accordion__title" @click="showDropdown">
-            <span class="b-accordion__title-text">
-                {{ accordion.fields.title }}
+    <div class="the-accordion">
+        <button class="the-accordion__title" @click="showDropdown">
+            <span class="the-accordion__title-text">
+                {{ accordion.title }}
             </span>
 
             <span
-                class="b-accordion__title-arrow"
+                class="the-accordion__title-arrow"
                 :class="{
-                    'b-accordion__title-arrow--rotate':
+                    'the-accordion__title-arrow--rotate':
                         activeIndex === index || isShow,
                 }"
             >
@@ -48,15 +48,15 @@
             </span>
         </button>
         <transition-container :show="activeIndex === index || isShow">
-            <div class="b-accordion__desc">
-                {{ accordion.fields.description }}
+            <div class="the-accordion__desc">
+                {{ accordion.text }}
             </div>
         </transition-container>
     </div>
 </template>
 
 <style lang="scss">
-    .b-accordion {
+    .the-accordion {
         padding: 16px 0;
         margin-top: -1px;
         &:not(:first-child) {
@@ -71,7 +71,7 @@
         }
     }
 
-    .b-accordion__title {
+    .the-accordion__title {
         position: relative;
         display: flex;
         justify-content: space-between;
@@ -81,7 +81,7 @@
         cursor: pointer;
     }
 
-    .b-accordion__title-text {
+    .the-accordion__title-text {
         color: $color-base;
         font-size: 16px;
         font-weight: 500;
@@ -92,7 +92,7 @@
         }
     }
 
-    .b-accordion__title-arrow {
+    .the-accordion__title-arrow {
         position: absolute;
         right: 0;
         top: 50%;
@@ -116,7 +116,7 @@
         }
     }
 
-    .b-accordion__title-arrow--rotate {
+    .the-accordion__title-arrow--rotate {
         color: #fff;
         background-color: $color-accent;
         svg {
@@ -125,9 +125,9 @@
         }
     }
 
-    .b-accordion__desc {
+    .the-accordion__desc {
         padding-top: 16px;
-        color: $color-light;
+        color: #4f5464;
         font-size: 14px;
         line-height: 24px;
         a {
