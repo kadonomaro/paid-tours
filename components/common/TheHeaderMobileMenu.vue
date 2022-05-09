@@ -21,12 +21,12 @@
             ></the-header-mobile-navigation>
         </div>
 
-        <a href="tel:79785860623" class="the-header-mobile-menu__phone">
-            +7 (978) 586 06-23
+        <a href="tel:79111111111" class="the-header-mobile-menu__phone">
+            +7 (911) 111 11-11
         </a>
 
         <div class="the-header-mobile__callback">
-            <the-callback-button is-only-text></the-callback-button>
+            <the-callback-button is-dark></the-callback-button>
         </div>
     </div>
 </template>

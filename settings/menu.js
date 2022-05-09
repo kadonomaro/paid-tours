@@ -10,9 +10,9 @@ const menu = [
         hash: "#price",
     },
     {
-        name: "Что включено",
+        name: "FAQ",
         link: "index",
-        hash: "#about",
+        hash: "#faq",
     },
     {
         name: "Фотографии",

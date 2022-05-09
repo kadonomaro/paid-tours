@@ -1,11 +1,18 @@
 <script>
     export default {
         name: "TheCallbackButton",
+        props: {
+            isDark: Boolean,
+        },
     };
 </script>
 
 <template>
-    <button class="the-callback-button" @click="$popup.show('ModalCallback')">
+    <button
+        class="the-callback-button"
+        :class="{ 'is-dark': isDark }"
+        @click="$popup.show('ModalCallback')"
+    >
         Перезвоните мне
     </button>
 </template>
@@ -19,6 +26,10 @@
         border-radius: 25px;
         border: 2px solid #fff;
         transition: background-color 0.2s ease-in, color 0.2s ease-in;
+        &.is-dark {
+            color: $color-accent;
+            border-color: $color-accent;
+        }
         &:hover {
             background-color: #fff;
             color: $color-base;

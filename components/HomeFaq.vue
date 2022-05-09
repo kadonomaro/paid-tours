@@ -1,5 +1,6 @@
 <script>
     import TheAccordion from "~/components/common/TheAccordion";
+
     export default {
         name: "HomeFaq",
         components: { TheAccordion },
@@ -37,7 +38,7 @@
 </script>
 
 <template>
-    <section class="home-faq">
+    <section id="faq" class="home-faq">
         <div class="home-faq__inner">
             <h2 class="home-faq__title">Ответы на частые вопросы</h2>
 

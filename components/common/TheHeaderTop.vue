@@ -44,6 +44,7 @@
             right: 0;
             z-index: 100;
             display: block;
+            height: 75px;
             padding: 12px 0;
             background-color: #64f;
             background: linear-gradient(

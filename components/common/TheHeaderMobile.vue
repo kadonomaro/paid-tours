@@ -57,9 +57,11 @@
 
 <style lang="scss">
     .the-header-mobile {
-        position: sticky;
-        z-index: 100;
+        position: fixed;
         top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
         background-color: #fff;
         border-bottom: 1px solid $color-border;
         @include bp($bp-desktop-sm) {

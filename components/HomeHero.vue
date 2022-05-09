@@ -38,9 +38,15 @@
 
 <style lang="scss">
     .home-hero {
+        min-height: calc(100vh - 55px);
+        padding: 24px 0;
         background-image: url("/images/home/hero.svg");
         background-repeat: no-repeat;
         background-size: cover;
+        @include bp($bp-desktop-sm) {
+            min-height: calc(100vh - 75px);
+            padding: 0;
+        }
     }
 
     .home-hero__inner {
@@ -52,24 +58,32 @@
     }
 
     .home-hero__text {
-        flex-basis: 50%;
-        max-width: 50%;
+        @include bp($bp-desktop-sm) {
+            flex-basis: 50%;
+            max-width: 50%;
+        }
     }
 
     .home-hero__image {
-        flex-basis: 50%;
-        max-width: 50%;
-        margin-top: -10%;
+        @include bp($bp-desktop-sm) {
+            flex-basis: 50%;
+            max-width: 50%;
+            margin-top: -10%;
+        }
     }
 
     .home-hero__title {
         margin-bottom: 20px;
-        font-size: 52px;
+        font-size: 32px;
+        line-height: 40px;
         font-weight: 900;
-        line-height: 58px;
         letter-spacing: -0.5px;
         span {
             color: $color-accent;
+        }
+        @include bp($bp-desktop-sm) {
+            font-size: 52px;
+            line-height: 58px;
         }
     }
 
@@ -77,12 +91,18 @@
         margin-bottom: 32px;
         max-width: 480px;
         color: #4f5464;
-        font-size: 18px;
-        line-height: 28px;
+        font-size: 14px;
+        line-height: 24px;
+        @include bp($bp-desktop-sm) {
+            font-size: 18px;
+            line-height: 28px;
+        }
     }
 
     .home-hero__button {
         position: relative;
+        display: block;
+        margin: 0 auto;
         padding: 12px 24px;
         color: #fff;
         background-color: $color-accent;
@@ -105,6 +125,9 @@
             background-color: $color-accent;
             opacity: 0.3;
             animation: ripple 3s ease-in-out infinite;
+        }
+        @include bp($bp-desktop-sm) {
+            margin: 0;
         }
     }
 

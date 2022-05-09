@@ -51,7 +51,7 @@
     }
 
     .the-footer-top__logo {
-        margin-bottom: 24px;
+        margin-bottom: 12px;
         @include bp($bp-desktop-sm) {
             margin-right: 60px;
             margin-bottom: 0;

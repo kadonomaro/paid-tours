@@ -111,13 +111,13 @@
         height: 100%;
         padding: 32px;
         background-color: #fff;
-        border-radius: 16px;
         box-sizing: border-box;
         -webkit-overflow-scrolling: touch;
         @include bp($bp-desktop-sm) {
             max-width: 450px;
             margin: 30px auto 10px;
             height: auto;
+            border-radius: 16px;
         }
     }
 

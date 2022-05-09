@@ -19,9 +19,9 @@ body {
 
 .page {
     flex-grow: 1;
-    padding: 20px 0 60px;
+    padding: 55px 0 60px;
     @include bp($bp-desktop-sm) {
-        padding: 70px 0 100px;
+        padding: 75px 0 100px;
     }
 }
 
