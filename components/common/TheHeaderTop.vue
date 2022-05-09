@@ -19,7 +19,9 @@
 
                 <div class="the-header-top__navigation">
                     <the-top-navigation></the-top-navigation>
+                </div>
 
+                <div class="the-header-top__contacts">
                     <a href="tel:79111111111" class="the-header-top__phone">
                         +7 (911) 111 11-11
                     </a>
@@ -56,9 +58,10 @@
     }
 
     .the-header-top__inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include bp($bp-desktop-sm) {
+            display: flex;
+            align-items: center;
+        }
     }
 
     .the-header-top__logo {
@@ -68,32 +71,36 @@
     }
 
     .the-header-top__navigation {
-        display: flex;
-        align-items: center;
+        @include bp($bp-desktop-sm) {
+            margin-right: auto;
+        }
+    }
+
+    .the-header-top__contacts {
+        @include bp($bp-desktop-sm) {
+            display: flex;
+            align-items: center;
+        }
     }
 
     .the-header-top__phone {
-        padding: 8px 16px;
-        color: #fff;
-        font-size: 14px;
-        line-height: 20px;
-        white-space: nowrap;
-        text-decoration: none;
-        transition: background-color 0.2s ease-in;
-        border-radius: 25px;
-        &:hover {
-            background-color: rgba(#fff, 0.1);
-        }
         @include bp($bp-desktop-sm) {
+            padding: 8px 16px;
+            color: #fff;
             font-size: 16px;
             line-height: 24px;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: background-color 0.2s ease-in;
+            border-radius: 25px;
+            &:hover {
+                background-color: rgba(#fff, 0.1);
+            }
         }
     }
 
     .the-header-top__callback {
-        display: none;
         @include bp($bp-desktop-sm) {
-            display: block;
             margin-left: 10px;
         }
     }

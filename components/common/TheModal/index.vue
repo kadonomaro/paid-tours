@@ -123,10 +123,15 @@
 
     .base-popup--gallery {
         max-width: 900px;
+        padding: 0;
         .base-popup__close {
-            top: -25px;
-            right: -25px;
             filter: brightness(0) invert(100%);
+        }
+        @include bp($bp-desktop-sm) {
+            .base-popup__close {
+                top: -25px;
+                right: -25px;
+            }
         }
     }
 

@@ -22,16 +22,10 @@ const ModalCallback = () =>
         /* webpackChunkName: "Modal_Callback" */ "~/components/common/TheModal/components/ModalCallback"
     );
 
-const ModalCalc = () =>
-    import(
-        /* webpackChunkName: "ModalCalс" */ "~/components/common/TheModal/components/ModalCalc"
-    );
-
 const ModalGallery = () =>
     import(
         /* webpackChunkName: "ModalGallery" */ "~/components/common/TheModal/components/ModalGallery"
     );
 
 Vue.component("ModalCallback", ModalCallback);
-Vue.component("ModalCalc", ModalCalc);
 Vue.component("ModalGallery", ModalGallery);
