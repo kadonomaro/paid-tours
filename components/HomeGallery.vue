@@ -1,45 +1,35 @@
 <script>
     export default {
         name: "HomeGallery",
-        images() {
-            return [
-                {
-                    preview: "/images/gallery/gallery-1--preview.jpg",
-                    detail: "/images/gallery/gallery-1.jpg",
-                },
-                {
-                    preview: "/images/gallery/gallery-2--preview.jpg",
-                    detail: "/images/gallery/gallery-2.jpg",
-                },
-                {
-                    preview: "/images/gallery/gallery-3--preview.jpg",
-                    detail: "/images/gallery/gallery-3.jpg",
-                },
-                {
-                    preview: "/images/gallery/gallery-4--preview.jpg",
-                    detail: "/images/gallery/gallery-4.jpg",
-                },
-                {
-                    preview: "/images/gallery/gallery-5--preview.jpg",
-                    detail: "/images/gallery/gallery-5.jpg",
-                },
-                {
-                    preview: "/images/gallery/gallery-6--preview.jpg",
-                    detail: "/images/gallery/gallery-6.jpg",
-                },
-                {
-                    preview: "/images/gallery/gallery-7--preview.jpg",
-                    detail: "/images/gallery/gallery-7.jpg",
-                },
-                {
-                    preview: "/images/gallery/gallery-8--preview.jpg",
-                    detail: "/images/gallery/gallery-8.jpg",
-                },
-                {
-                    preview: "/images/gallery/gallery-9--preview.jpg",
-                    detail: "/images/gallery/gallery-9.jpg",
-                },
-            ];
+        computed: {
+            images() {
+                return [
+                    {
+                        preview: "/images/gallery/gallery-1--preview.jpg",
+                        detail: "/images/gallery/gallery-1.jpg",
+                    },
+                    {
+                        preview: "/images/gallery/gallery-2--preview.jpg",
+                        detail: "/images/gallery/gallery-2.jpg",
+                    },
+                    {
+                        preview: "/images/gallery/gallery-3--preview.jpg",
+                        detail: "/images/gallery/gallery-3.jpg",
+                    },
+                    {
+                        preview: "/images/gallery/gallery-4--preview.jpg",
+                        detail: "/images/gallery/gallery-4.jpg",
+                    },
+                    {
+                        preview: "/images/gallery/gallery-5--preview.jpg",
+                        detail: "/images/gallery/gallery-5.jpg",
+                    },
+                    {
+                        preview: "/images/gallery/gallery-6--preview.jpg",
+                        detail: "/images/gallery/gallery-6.jpg",
+                    },
+                ];
+            },
         },
     };
 </script>
@@ -52,17 +42,18 @@
             alt=""
         />
         <div class="home-gallery__inner">
-            <div class="home-gallery__images">
+            <div class="home-gallery__images mobile-hidden">
                 <div
-                    v-for="(image, index) in $options.images()"
+                    v-for="(image, index) in images"
                     :key="index"
                     class="home-gallery__image"
-                    @click="
-                        $popup.show('ModalGallery', { imageUrl: image.detail })
-                    "
                 >
-                    <img :src="image.preview" alt="" />
+                    <home-gallery-card :image="image"></home-gallery-card>
                 </div>
+            </div>
+
+            <div class="home-gallery__slider desktop-hidden">
+                <home-gallery-slider :slides="images"></home-gallery-slider>
             </div>
         </div>
     </section>
@@ -71,7 +62,7 @@
 <style lang="scss">
     .home-gallery {
         position: relative;
-        padding: 90px 16px 140px;
+        padding: 50px 16px 100px;
         background-color: #f0f4f9;
         &::before,
         &::after {
@@ -93,7 +84,7 @@
             background: linear-gradient(135deg, #64f 50%, #f9d 150%);
         }
         @include bp($bp-desktop-sm) {
-            padding: 120px 0 180px;
+            padding: 120px 0 140px;
         }
     }
 
@@ -116,65 +107,32 @@
     }
 
     .home-gallery__images {
-        position: relative;
-        z-index: 3;
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 -3px;
         @include bp($bp-desktop-sm) {
-            margin: 0 -8px;
+            position: relative;
+            z-index: 3;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-gap: 16px;
+            grid-auto-rows: auto;
+            grid-auto-flow: dense;
         }
     }
 
     .home-gallery__image {
-        position: relative;
-        flex-basis: calc(50% - 6px);
-        max-width: calc(50% - 6px);
-        margin: 3px;
-        &::before {
-            content: "";
-            display: block;
-            padding-bottom: 75%;
-        }
-
-        img {
-            position: absolute;
-            z-index: 2;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
         @include bp($bp-desktop-sm) {
-            flex-basis: calc(33.3333% - 16px);
-            max-width: calc(33.3333% - 16px);
-            margin: 8px;
-            cursor: pointer;
-            img {
-                transition: transform 0.2s ease-in;
+            &:first-child,
+            &:nth-child(5) {
+                grid-column-end: span 2;
+                grid-row-end: span 2;
             }
-            &::after {
-                content: "";
-                position: absolute;
-                z-index: 1;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                border: 3px solid rgba(#fff, 0.3);
-                background-color: rgba(#fff, 0.2);
-                opacity: 0.2;
-                transition: transform 0.2s ease-in;
-            }
-            &:hover {
-                img {
-                    transform: translate(-5px, 5px);
-                }
-                &::after {
-                    transform: translate(5px, -5px);
-                }
+            .home-gallery-card {
+                height: 100%;
             }
         }
+    }
+
+    .home-gallery__slider {
+        margin: 0 -16px;
     }
 </style>
