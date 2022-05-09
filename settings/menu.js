@@ -15,9 +15,9 @@ const menu = [
         hash: "#about",
     },
     {
-        name: "Проживание",
+        name: "Фотографии",
         link: "index",
-        hash: "#about",
+        hash: "#gallery",
     },
 ];
 

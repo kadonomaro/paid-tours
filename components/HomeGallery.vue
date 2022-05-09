@@ -45,7 +45,7 @@
 </script>
 
 <template>
-    <section class="home-gallery">
+    <section id="gallery" class="home-gallery">
         <img
             class="home-gallery__background mobile-hidden"
             src="/images/gallery/mountains.svg"
@@ -73,7 +73,6 @@
         position: relative;
         padding: 90px 16px 140px;
         background-color: #f0f4f9;
-        overflow: hidden;
         &::before,
         &::after {
             content: "";
@@ -105,7 +104,8 @@
         left: 0;
         width: 100%;
         transform: translateY(-50%);
-        opacity: 0.05;
+        opacity: 0.02;
+        pointer-events: none;
     }
 
     .home-gallery__inner {
@@ -121,6 +121,9 @@
         display: flex;
         flex-wrap: wrap;
         margin: 0 -3px;
+        @include bp($bp-desktop-sm) {
+            margin: 0 -8px;
+        }
     }
 
     .home-gallery__image {
@@ -131,10 +134,12 @@
         &::before {
             content: "";
             display: block;
-            padding-bottom: 100%;
+            padding-bottom: 75%;
         }
+
         img {
             position: absolute;
+            z-index: 2;
             top: 0;
             left: 0;
             width: 100%;
@@ -142,9 +147,34 @@
             object-fit: cover;
         }
         @include bp($bp-desktop-sm) {
-            flex-basis: calc(33.3333% - 6px);
-            max-width: calc(33.3333% - 6px);
+            flex-basis: calc(33.3333% - 16px);
+            max-width: calc(33.3333% - 16px);
+            margin: 8px;
             cursor: pointer;
+            img {
+                transition: transform 0.2s ease-in;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                border: 3px solid rgba(#fff, 0.3);
+                background-color: rgba(#fff, 0.2);
+                opacity: 0.2;
+                transition: transform 0.2s ease-in;
+            }
+            &:hover {
+                img {
+                    transform: translate(-5px, 5px);
+                }
+                &::after {
+                    transform: translate(5px, -5px);
+                }
+            }
         }
     }
 </style>

@@ -13,13 +13,16 @@
 <template>
     <div class="main-page page">
         <home-hero></home-hero>
-        <div class="container">
-            <div class="main-page__section"></div>
-        </div>
+        <home-faq></home-faq>
+        <home-gallery></home-gallery>
     </div>
 </template>
 
 <style lang="scss">
+    .main-page {
+        overflow: hidden;
+    }
+
     .main-page__section {
         &:not(:last-child) {
             margin-bottom: 32px;
