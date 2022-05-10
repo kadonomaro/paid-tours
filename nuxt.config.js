@@ -89,12 +89,7 @@ export default {
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
-    modules: [
-        "@nuxtjs/axios",
-        "@nuxtjs/style-resources",
-        "@nuxtjs/robots",
-        "@nuxtjs/sitemap",
-    ],
+    modules: ["@nuxtjs/axios", "@nuxtjs/style-resources", "@nuxtjs/robots"],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {
@@ -114,7 +109,6 @@ export default {
 
     robots: {
         UserAgent: "*",
-        Sitemap: "https://nuxt-stretch-ceiling.web.app/sitemap.xml",
     },
 
     router: {
