@@ -13,6 +13,7 @@
 <template>
     <div class="main-page page">
         <home-hero></home-hero>
+        <home-features></home-features>
         <home-faq></home-faq>
         <home-gallery></home-gallery>
     </div>

@@ -63,7 +63,7 @@
     .home-gallery {
         position: relative;
         padding: 50px 16px 100px;
-        background-color: #f0f4f9;
+        background-color: $color-background;
         &::before,
         &::after {
             content: "";
@@ -113,7 +113,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(4, 1fr);
-            grid-gap: 16px;
+            grid-gap: 32px;
             grid-auto-rows: auto;
             grid-auto-flow: dense;
         }

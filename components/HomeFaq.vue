@@ -60,7 +60,7 @@
 <style lang="scss">
     .home-faq {
         padding: 36px 16px;
-        background-color: #f0f4f9;
+        background-color: $color-background;
         @include bp($bp-desktop-sm) {
             padding: 60px 0;
         }
@@ -89,7 +89,10 @@
     .home-faq__accordion {
         padding: 6px 24px;
         background-color: #fff;
-        border-radius: 16px;
+        border-radius: 12px;
         box-shadow: 0 0 12px rgba(#000, 0.05);
+        @include bp($bp-desktop-sm) {
+            border-radius: 16px;
+        }
     }
 </style>

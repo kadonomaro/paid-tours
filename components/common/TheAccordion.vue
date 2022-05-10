@@ -32,23 +32,22 @@
 
 <template>
     <div class="the-accordion">
-        <button class="the-accordion__title" @click="showDropdown">
-            <span class="the-accordion__title-text">
+        <button class="the-accordion__trigger" @click="showDropdown">
+            <span class="the-accordion__title">
                 {{ accordion.title }}
             </span>
 
             <span
-                class="the-accordion__title-arrow"
+                class="the-accordion__arrow"
                 :class="{
-                    'the-accordion__title-arrow--rotate':
-                        activeIndex === index || isShow,
+                    'is-rotate': activeIndex === index || isShow,
                 }"
             >
                 <the-svg-icon name="arrow"></the-svg-icon>
             </span>
         </button>
         <transition-container :show="activeIndex === index || isShow">
-            <div class="the-accordion__desc">
+            <div class="the-accordion__text">
                 {{ accordion.text }}
             </div>
         </transition-container>
@@ -71,7 +70,7 @@
         }
     }
 
-    .the-accordion__title {
+    .the-accordion__trigger {
         position: relative;
         display: flex;
         justify-content: space-between;
@@ -81,7 +80,7 @@
         cursor: pointer;
     }
 
-    .the-accordion__title-text {
+    .the-accordion__title {
         color: $color-base;
         font-size: 16px;
         font-weight: 500;
@@ -92,7 +91,7 @@
         }
     }
 
-    .the-accordion__title-arrow {
+    .the-accordion__arrow {
         position: absolute;
         right: 0;
         top: 50%;
@@ -114,21 +113,21 @@
             transform: rotate(-90deg);
             transition: transform 0.2s ease-in;
         }
-    }
-
-    .the-accordion__title-arrow--rotate {
-        color: #fff;
-        background-color: $color-accent;
-        svg {
-            transform: rotate(90deg);
-            fill: #fff;
+        &.is-rotate {
+            color: #fff;
+            background-color: $color-accent;
+            svg {
+                transform: rotate(90deg);
+                fill: #fff;
+            }
         }
     }
 
-    .the-accordion__desc {
+    .the-accordion__text {
         padding-top: 16px;
         color: #4f5464;
         font-size: 14px;
+        font-weight: 400;
         line-height: 24px;
         a {
             &:hover {

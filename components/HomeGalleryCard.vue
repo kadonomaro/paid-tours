@@ -45,11 +45,11 @@
                 content: "";
                 position: absolute;
                 z-index: 1;
-                top: -2px;
-                bottom: -2px;
-                left: -2px;
-                right: -2px;
-                border: 2px solid rgba(#fff, 0.2);
+                top: -8px;
+                bottom: -8px;
+                left: -8px;
+                right: -8px;
+                border: 2px solid rgba(#fff, 0.1);
                 transition: transform 0.2s ease-in;
             }
             &:hover {

@@ -45,17 +45,31 @@
 
     .the-footer-navigation__link {
         display: block;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
         color: #fff;
         font-size: 16px;
         text-decoration: none;
-        transition: color 0.2s ease-in;
-        &:hover,
-        &.nuxt-link-exact-active {
-            color: $color-accent;
-        }
         @include bp($bp-desktop-sm) {
+            position: relative;
             margin-bottom: 0;
+            &:hover,
+            &.nuxt-link-exact-active {
+                &::before {
+                    transform: scaleX(1);
+                }
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -3px;
+                width: 100%;
+                height: 1px;
+                background-color: #fff;
+                transition: transform 0.2s ease-in;
+                transform-origin: left;
+                transform: scaleX(0);
+            }
         }
     }
 </style>
