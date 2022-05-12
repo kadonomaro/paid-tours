@@ -4,7 +4,7 @@ export default {
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        titleTemplate: "%s - Монтаж современных натяжных потолков в Крыму",
+        titleTemplate: "%s - Увлекательные путешествия по приемлимым ценам",
         title: "",
         htmlAttrs: {
             lang: "ru",

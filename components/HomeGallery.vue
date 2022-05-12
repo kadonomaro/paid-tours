@@ -36,6 +36,8 @@
 
 <template>
     <section id="gallery" class="home-gallery">
+        <h2 class="home-gallery__title page-title">Фотографии местности</h2>
+
         <img
             class="home-gallery__background mobile-hidden"
             src="/images/gallery/mountains.svg"
@@ -84,7 +86,7 @@
             background: linear-gradient(135deg, #64f 50%, #f9d 150%);
         }
         @include bp($bp-desktop-sm) {
-            padding: 120px 0 140px;
+            padding: 90px 0 140px;
         }
     }
 
@@ -97,6 +99,16 @@
         transform: translateY(-50%);
         opacity: 0.02;
         pointer-events: none;
+    }
+
+    .home-gallery__title {
+        position: relative;
+        z-index: 2;
+        margin-bottom: 16px;
+        color: #fff;
+        @include bp($bp-desktop-sm) {
+            margin-bottom: 32px;
+        }
     }
 
     .home-gallery__inner {

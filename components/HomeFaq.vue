@@ -40,7 +40,7 @@
 <template>
     <section id="faq" class="home-faq">
         <div class="home-faq__inner">
-            <h2 class="home-faq__title">Ответы на частые вопросы</h2>
+            <h2 class="home-faq__title page-title">Ответы на частые вопросы</h2>
 
             <div class="home-faq__accordion">
                 <the-accordion
@@ -75,14 +75,8 @@
 
     .home-faq__title {
         margin-bottom: 16px;
-        font-size: 32px;
-        line-height: 36px;
-        font-weight: 900;
         @include bp($bp-desktop-sm) {
             margin-bottom: 32px;
-            font-size: 42px;
-            line-height: 48px;
-            text-align: center;
         }
     }
 

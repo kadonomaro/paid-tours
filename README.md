@@ -1,4 +1,4 @@
-# nuxt_stretch_ceiling
+# paid-tours
 
 ## Build Setup
 

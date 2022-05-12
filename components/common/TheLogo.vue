@@ -6,7 +6,13 @@
 
 <template>
     <NuxtLink class="the-logo" :to="{ name: 'index' }">
-        <img src="/images/logo.svg" alt="Туры в Горный Алтай" />
+        <picture>
+            <source
+                media="(max-width: 991px)"
+                srcset="/images/logo--mobile.svg"
+            />
+            <img src="/images/logo.svg" alt="Туры в Горный Алтай" />
+        </picture>
     </NuxtLink>
 </template>
 
