@@ -1,7 +1,17 @@
 <script>
+    import HomeHero from "~/components/HomeHero";
+    import HomeFeatures from "~/components/HomeFeatures";
+    import HomeFaq from "~/components/HomeFaq";
+    import HomeGallery from "~/components/HomeGallery";
+
     export default {
         name: "IndexPage",
-
+        components: {
+            HomeHero,
+            HomeFeatures,
+            HomeFaq,
+            HomeGallery,
+        },
         head() {
             return {
                 title: "Туры в Горный алтай",

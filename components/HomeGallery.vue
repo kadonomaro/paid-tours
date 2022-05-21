@@ -1,6 +1,13 @@
 <script>
+    import HomeGalleryCard from "~/components/HomeGalleryCard";
+    import HomeGallerySlider from "~/components/HomeGallerySlider";
+
     export default {
         name: "HomeGallery",
+        components: {
+            HomeGalleryCard,
+            HomeGallerySlider,
+        },
         computed: {
             images() {
                 return [
