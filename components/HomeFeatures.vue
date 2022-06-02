@@ -65,9 +65,9 @@
         @include bp($bp-desktop-sm) {
             position: relative;
             display: block;
-            flex-basis: calc(25% - 36px);
-            max-width: calc(25% - 36px);
-            margin: 0 18px;
+            flex-basis: calc(25% - 64px);
+            max-width: calc(25% - 64px);
+            margin: 0 32px;
             padding: 24px 36px;
             font-size: 16px;
             font-weight: 500;

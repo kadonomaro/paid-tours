@@ -25,7 +25,7 @@
         &::before {
             content: "";
             display: block;
-            padding-bottom: 75%;
+            padding-bottom: 65%;
         }
         img {
             position: absolute;

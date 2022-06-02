@@ -120,7 +120,7 @@
 
     .home-gallery__inner {
         @include bp($bp-desktop-sm) {
-            max-width: 900px;
+            max-width: 1024px;
             margin: 0 auto;
         }
     }
