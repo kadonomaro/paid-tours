@@ -40,12 +40,27 @@
     .home-hero {
         min-height: calc(100vh - 55px);
         padding: 24px 0;
-        background-image: url("/images/home/hero.svg");
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-color: #f0f4f9;
         @include bp($bp-desktop-sm) {
+            position: relative;
             min-height: calc(100vh - 75px);
             padding: 0;
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: 2;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 200px;
+                background-image: linear-gradient(
+                    to bottom,
+                    transparent 0%,
+                    transparent 30%,
+                    #fff 100%
+                );
+                pointer-events: none;
+            }
         }
     }
 
@@ -66,9 +81,13 @@
 
     .home-hero__image {
         @include bp($bp-desktop-sm) {
-            flex-basis: 50%;
-            max-width: 50%;
-            margin-top: -10%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            img {
+                height: 100%;
+            }
         }
     }
 
